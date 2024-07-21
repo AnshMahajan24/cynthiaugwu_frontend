@@ -9,6 +9,24 @@ html,body{
     width: 100%;
     
 }
+.underline {
+    position: relative; /* Ensure relative positioning for the pseudo-element */
+}
+
+.underline::after {
+    content: " ";
+    position: absolute;
+    bottom: -2px; /* Position just below the text */
+    left: 0;
+    width: 0; /* Start with no width */
+    height: 1.15px; /* Underline thickness */
+    background-color: white;  /* Underline color */
+    transition: width 0.3s ease; /* Smooth width transition */
+}
+
+.underline:hover::after {
+    width: 100%; /* Extend underline width on hover */
+}
 
 .bounding{
     width: fit-content;
@@ -105,9 +123,9 @@ html,body{
     text-decoration: none;
     font-weight: 500;
 }
-#firsthover :hover {
-    color: white;
-    text-decoration: underline;
+#hoverme:hover{
+    background-color: #fff;
+    color: black;
 }
 
 #footer1 #iconset {
